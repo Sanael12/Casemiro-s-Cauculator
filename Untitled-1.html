@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Calculator</title>
+    <style>
+        body {
+            background-color: green;
+            background-size: cover;
+        }
+        #calculator {
+            width: 200px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #d6b315ef;
+            border-radius: 5px;
+        }
+        input[type=number] {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        button {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <h2>casemiro's calculator</h2>
+        <input type="number" id="base" placeholder="Enter base">
+        <input type="number" id="exponent" placeholder="Enter exponent">
+        <button onclick="calculatePower()">Resultado</button>
+        <h2 id="result"></h2>
+    </div>
+
+    <script>
+        function calculatePower() {
+            var base = parseFloat(document.getElementById('base').value);
+            var exponent = parseFloat(document.getElementById('exponent').value);
+            if (isNaN(base) || isNaN(exponent)) {
+                document.getElementById('result').innerText = "Invalid input. Please enter numbers.";
+            } else {
+                var result = Math.pow(base, exponent);
+                document.getElementById('result').innerText = "Result: " + result;
+            }
+        }
+    </script>
+</body>
+</html>
